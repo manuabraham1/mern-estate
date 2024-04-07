@@ -10,7 +10,6 @@ export default function Profile() {
   const [filePerc,setFilePerc] = useState(0);
   const [fileUploadError,setFileUploadError] = useState(false);
   const [formData, setFormDate] = useState({});
-  console.log(formData);
 
   useEffect(() => {
     if(file){
@@ -55,18 +54,19 @@ export default function Profile() {
           {fileUploadError ?
             <span className='text-red-700'>
               Error Image Upload (image must be less than 2mb)
-            </span> :
-            filePerc > 0 && filePerc < 100 ? (
+            </span> 
+            : filePerc > 0 && filePerc < 100 ? (
                <span className='text-slate-700'>
                 {`Uploading ${filePerc}%`}
                </span>
             )
-            :
-            filePerc === 100 ? (
+            : filePerc === 100 ? (
               <span className='text-green-700'>
                 Image Successfully Uploaded!
               </span>
-            ) : ('')
+            ) : (
+              ''
+            )
           }
         </p>
         <input type="text" placeholder='username' id='username'
