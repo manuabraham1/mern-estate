@@ -42,7 +42,6 @@ export default function SignIn() {
       dispatch(signInFailure(error.message))
     }
     
-    console.log(data)
   }
   return (
     <div className='p-3 max-w-lg mx-auto'>
